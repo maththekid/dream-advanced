@@ -40,7 +40,6 @@ auto client::features::combat::backtrack::run(client::mapper::__minecraft& minec
 
 	static auto players_data = std::vector<__player_data>();
 
-	/*
 	if (draw_bounds)
 	{
 		auto local_player_view_position = minecraft.get_local_player().get_view_position(minecraft.get_timer().get_partial_ticks());
@@ -74,7 +73,6 @@ auto client::features::combat::backtrack::run(client::mapper::__minecraft& minec
 		for (unsigned __int64 x = 0; x < 20; ++x)
 			player_data.player_tick_data[x].draw = false;
 	}
-	*/
 
 	for (auto& player : minecraft.get_world().get_players())
 	{
@@ -109,11 +107,11 @@ auto client::features::combat::backtrack::run(client::mapper::__minecraft& minec
 					auto player_position = player.get_position();
 
 					player_bounding_box_bounds.first.x = player_position.x - .4;
-					player_bounding_box_bounds.first.y = player_position.x - .1;
-					player_bounding_box_bounds.first.z = player_position.x - .4;
+					player_bounding_box_bounds.first.y = player_position.y - .1;
+					player_bounding_box_bounds.first.z = player_position.z - .4;
 					player_bounding_box_bounds.second.x = player_position.x + .4;
-					player_bounding_box_bounds.second.y = player_position.x + 1.9;
-					player_bounding_box_bounds.second.z = player_position.x + .4;
+					player_bounding_box_bounds.second.y = player_position.y + 1.9;
+					player_bounding_box_bounds.second.z = player_position.z + .4;
 
 					player_bounding_box.set_bounds(player_data.player_tick_data[x].bounding_box_bounds);
 
